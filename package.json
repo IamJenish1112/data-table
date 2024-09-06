@@ -2,7 +2,7 @@
   "name": "jenish-data-table",
   "version": "1.0.1",
   "description": "MUI data table with pagination and search bar",
-  "main": "dist/Datatable.js",
+  "main": "dist/DataTable.js",
   "scripts": {
     "test": "test jenish-data-table",
     "build": "babel src --out-dir dist"
