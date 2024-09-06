@@ -79,82 +79,86 @@ function DataTable({
           height: datatable ? "290px" : "max-content",
         }}
       >
-        {isLoading ? (
-          <Box
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            height={"300px"}
-          >
-            <CircularProgress color="inherit" />
-            <Typography align="center" variant="h5" marginLeft={"10px"}>
-              Loading...
-            </Typography>
-          </Box>
-        ) : (
-          <Table stickyHeader size="small">
-            <TableHead>
-              <TableRow>
-                {headCols.map((col) => (
-                  <TableCell
-                    key={col.id}
-                    sx={{
-                      border: "1px solid #ededed",
-                      backgroundColor: "#dcdcdc",
-                      width: col.width,
-                    }}
+        <Table stickyHeader size="small">
+          <TableHead>
+            <TableRow>
+              {headCols.map((col) => (
+                <TableCell
+                  key={col.id}
+                  sx={{
+                    border: "1px solid #ededed",
+                    backgroundColor: "#dcdcdc",
+                    width: col.width,
+                  }}
+                >
+                  <Box
+                    display={"flex"}
+                    alignItems={"center"}
+                    justifyContent={"space-between"}
                   >
-                    <Box display={"flex"} alignItems={"center"}>
-                      <Typography>{col.name}</Typography>
-                      {col.sorting ? (
-                        <>
-                          <button
-                            style={{
-                              backgroundColor: "transparent",
-                              padding: "0px",
-                              border: "none",
-                              color:
-                                col.order === "asc" &&
-                                col.sortingName === sortedName
-                                  ? "white"
-                                  : "black",
-                            }}
-                            onClick={() => {
-                              changeSortBy(col.sortingName);
-                              changeOrder("asc");
-                              setSortedName(col.sortingName);
-                            }}
-                          >
-                            <ArrowDropUp />
-                          </button>
-                          <button
-                            onClick={() => {
-                              changeSortBy(col.sortingName);
-                              changeOrder("desc");
-                              setSortedName(col.sortingName);
-                            }}
-                            style={{
-                              backgroundColor: "transparent",
-                              padding: "0px",
-                              border: "none",
-                              color:
-                                col.order === "desc" &&
-                                col.sortingName === sortedName
-                                  ? "white"
-                                  : "black",
-                            }}
-                          >
-                            <ArrowDropDown />
-                          </button>
-                        </>
-                      ) : (
-                        ""
-                      )}
-                    </Box>
-                  </TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
+                    <Typography>{col.name}</Typography>
+                    {col.sorting ? (
+                      <Box>
+                        <button
+                          style={{
+                            backgroundColor: "transparent",
+                            padding: "0px",
+                            border: "none",
+                            color:
+                              col.order === "asc" &&
+                              col.sortingName === sortedName
+                                ? "white"
+                                : "black",
+                          }}
+                          onClick={() => {
+                            changeSortBy(col.sortingName);
+                            changeOrder("asc");
+                            setSortedName(col.sortingName);
+                          }}
+                        >
+                          <ArrowDropUp />
+                        </button>
+                        <button
+                          onClick={() => {
+                            changeSortBy(col.sortingName);
+                            changeOrder("desc");
+                            setSortedName(col.sortingName);
+                          }}
+                          style={{
+                            backgroundColor: "transparent",
+                            padding: "0px",
+                            border: "none",
+                            color:
+                              col.order === "desc" &&
+                              col.sortingName === sortedName
+                                ? "white"
+                                : "black",
+                          }}
+                        >
+                          <ArrowDropDown />
+                        </button>
+                      </Box>
+                    ) : (
+                      ""
+                    )}
+                  </Box>
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          {isLoading ? (
+            <Box
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              height={"300px"}
+            >
+              <CircularProgress color="inherit" />
+              <Typography align="center" variant="h5" marginLeft={"10px"}>
+                Loading...
+              </Typography>
+            </Box>
+          ) : (
             <TableBody>
               {rows.length === 0 ? (
                 <TableRow>
@@ -187,8 +191,8 @@ function DataTable({
                 ))
               )}
             </TableBody>
-          </Table>
-        )}
+          )}
+        </Table>
       </TableContainer>
       {datatable && (
         <Box
