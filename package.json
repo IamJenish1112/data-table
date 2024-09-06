@@ -1,0 +1,40 @@
+{
+  "name": "jenish-data-table",
+  "version": "1.0.0",
+  "description": "MUI data table with pagination and search bar",
+  "main": "dist/Datatable.js",
+  "scripts": {
+    "test": "test jenish-data-table",
+    "build": "babel src --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IamJenish1112/jenish-data-table.git"
+  },
+  "keywords": [
+    "table",
+    "datatable",
+    "pagination",
+    "searchbar"
+  ],
+  "author": "jenish sorathiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IamJenish1112/jenish-data-table/issues"
+  },
+  "homepage": "https://github.com/IamJenish1112/jenish-data-table#readme",
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.0.2",
+    "@mui/material": "^6.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7"
+  }
+}
