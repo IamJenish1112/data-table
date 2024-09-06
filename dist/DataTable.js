@@ -92,18 +92,7 @@ function DataTable(_ref) {
       maxHeight: datatable ? "290px" : "max-content",
       height: datatable ? "290px" : "max-content"
     }
-  }, isLoading ? /*#__PURE__*/_react["default"].createElement(_material.Box, {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "300px"
-  }, /*#__PURE__*/_react["default"].createElement(_material.CircularProgress, {
-    color: "inherit"
-  }), /*#__PURE__*/_react["default"].createElement(_material.Typography, {
-    align: "center",
-    variant: "h5",
-    marginLeft: "10px"
-  }, "Loading...")) : /*#__PURE__*/_react["default"].createElement(_material.Table, {
+  }, /*#__PURE__*/_react["default"].createElement(_material.Table, {
     stickyHeader: true,
     size: "small"
   }, /*#__PURE__*/_react["default"].createElement(_material.TableHead, null, /*#__PURE__*/_react["default"].createElement(_material.TableRow, null, headCols.map(function (col) {
@@ -116,8 +105,9 @@ function DataTable(_ref) {
       }
     }, /*#__PURE__*/_react["default"].createElement(_material.Box, {
       display: "flex",
-      alignItems: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_material.Typography, null, col.name), col.sorting ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("button", {
+      alignItems: "center",
+      justifyContent: "space-between"
+    }, /*#__PURE__*/_react["default"].createElement(_material.Typography, null, col.name), col.sorting ? /*#__PURE__*/_react["default"].createElement(_material.Box, null, /*#__PURE__*/_react["default"].createElement("button", {
       style: {
         backgroundColor: "transparent",
         padding: "0px",
@@ -142,7 +132,18 @@ function DataTable(_ref) {
         color: col.order === "desc" && col.sortingName === sortedName ? "white" : "black"
       }
     }, /*#__PURE__*/_react["default"].createElement(_iconsMaterial.ArrowDropDown, null))) : ""));
-  }))), /*#__PURE__*/_react["default"].createElement(_material.TableBody, null, rows.length === 0 ? /*#__PURE__*/_react["default"].createElement(_material.TableRow, null, /*#__PURE__*/_react["default"].createElement(_material.TableCell, {
+  }))), isLoading ? /*#__PURE__*/_react["default"].createElement(_material.Box, {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "300px"
+  }, /*#__PURE__*/_react["default"].createElement(_material.CircularProgress, {
+    color: "inherit"
+  }), /*#__PURE__*/_react["default"].createElement(_material.Typography, {
+    align: "center",
+    variant: "h5",
+    marginLeft: "10px"
+  }, "Loading...")) : /*#__PURE__*/_react["default"].createElement(_material.TableBody, null, rows.length === 0 ? /*#__PURE__*/_react["default"].createElement(_material.TableRow, null, /*#__PURE__*/_react["default"].createElement(_material.TableCell, {
     colSpan: headCols.length,
     align: "center",
     sx: {
