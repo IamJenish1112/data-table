@@ -1,6 +1,6 @@
 {
   "name": "jenish-data-table",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "MUI data table with pagination and search bar",
   "main": "dist/DataTable.js",
   "scripts": {
